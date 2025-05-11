@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: teste-tecnico
+    profiles:
+      active:
+        - dev
+
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 123
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  flyway:
+    enabled: true
+    validateOnMigrate: false
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    schemas:
+      - public
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui
+    try-it-out-enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json

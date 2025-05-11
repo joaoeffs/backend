@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: teste_tecnico_postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: teste_tecnico_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  pgdata:

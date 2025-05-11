@@ -1,0 +1,107 @@
+BDD do domínio de produto/servico
+
+Cenário: Cadastro de novo produto ou serviço
+Dado que o usuário deseja cadastrar um novo produto ou serviço
+Quando ele informar todos os dados obrigatórios corretamente
+Então o sistema deve salvar o produto ou serviço no banco de dados
+E deve retornar o código de status HTTP 201 (Created)
+
+Cenário: Atualização de produto ou serviço
+Dado que o usuário deseja atualizar um produto ou serviço existente
+Quando ele informar os dados atualizados corretamente
+Então o sistema deve atualizar o produto ou serviço no banco de dados
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Inativar um produto ou serviço
+Dado que o usuário deseja inativar um produto ou serviço
+Quando ele selecionar o item desejado
+Então o sistema deve marcar o produto ou serviço como inativo no banco de dados
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Ativar um produto ou serviço
+Dado que o usuário deseja ativar um produto ou serviço
+Quando ele selecionar o item desejado
+Então o sistema deve marcar o produto ou serviço como ativo no banco de dados
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Remover produto ou serviço sem vínculos
+Dado que o usuário deseja remover um produto ou serviço
+E o item não esteja vinculado a nenhum pedido
+Quando ele solicitar a remoção
+Então o sistema deve remover o item do banco de dados
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Tentar remover produto ou serviço vinculado a pedido
+Dado que o usuário deseja remover um produto ou serviço
+E o item esteja vinculado a pelo menos um pedido
+Quando ele solicitar a remoção
+Então o sistema não deve permitir a exclusão
+E deve retornar o código de status HTTP 400 (Bad Request)
+
+Cenário: Listar todos os produtos e serviços
+Dado que o usuário deseja visualizar os produtos e serviços cadastrados
+E deseja filtrar por descrição, preço e tipo
+Quando ele solicitar a listagem filtrada ou não
+Então o sistema deve retornar os registros de forma paginada
+
+
+BDD do domínio de pedido
+
+Cenário: Registrar novo pedido
+Dado que o usuário deseja registrar um novo pedido
+Quando ele informar todos os dados obrigatórios
+Então o sistema deve salvar o pedido no banco de dados
+E deve retornar o código de status HTTP 201 (Created)
+
+Cenário: Adicionar novos itens ao pedido
+Dado que o usuário deseja adicionar itens a um pedido existente
+Quando ele informar os produtos/serviços
+E incluir novos produtos ou serviços
+Então o sistema deve registrar o item pedido no banco de dados
+E calcular o valor total
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Aplicar desconto em pedido ABERTO
+Dado que o usuário deseja aplicar um desconto ao pedido
+E o pedido esteja com status ABERTO
+Quando ele informar o percentual de desconto
+Então o sistema deve aplicar o desconto apenas sobre os itens do tipo produto
+E deve recalcular o valor total do pedido
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Aplicar desconto em pedido FECHADO
+Dado que o usuário deseja aplicar um desconto ao pedido
+E o pedido esteja com status FECHADO
+Quando ele informar o percentual de desconto
+Então o sistema deve bloquear a operação
+E deve retornar o código de status HTTP 400 (Bad Request)
+
+Cenário: Fechar pedido
+Dado que o usuário deseja fechar um pedido
+Quando ele selecionar o pedido desejado
+Então o sistema deve alterar o status do pedido para FECHADO
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Cancelar pedido
+Dado que o usuário deseja cancelar um pedido
+Quando ele selecionar o pedido desejado
+Então o sistema deve cancelar o pedido
+E deve retornar o código de status HTTP 200 (OK)
+
+Cenário: Adicionar item desativado ao pedido
+Dado que o usuário deseja adicionar um produto ou serviço inativo ao pedido
+Quando ele informar o item inativo
+Então o sistema não deve permitir a inclusão
+E deve retornar o código de status HTTP 400 (Bad Request)
+
+Cenário: Listar pedidos com itens
+Dado que o usuário deseja consultar os pedidos existentes
+E deseja filtrar por cliente, número do pedido e situação
+Quando ele solicitar a listagem filtrada ou não
+Então o sistema deve retornar os pedidos paginados
+E cada pedido deve conter seus respectivos itens
+
+Cenário: Listar itens de um pedido
+Dado que o usuário deseja visualizar os itens de um pedido
+Quando ele solicitar a listagem
+Então o sistema deve retornar os itens
