@@ -19,6 +19,16 @@ spring:
       enabled: true
       path: /h2-console
 
+#  Caso queria usar POSTGRESQL como banco de dados,
+#  descomente as linhas abaixo, ajuste o database, username e password
+#  e comente as linhas 8 até 20
+
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/teste-tecnico?schema=public
+#    username: postgres
+#    password: totvs@123
+#    driver-class-name: org.postgresql.Driver
+
   flyway:
     enabled: true
     validateOnMigrate: false

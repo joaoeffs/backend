@@ -12,7 +12,7 @@ VALUES ('f1ba310b-1f35-4128-974c-bb8146b85f3d', 'Produto A', 'PRODUTO', 'ATIVO',
 INSERT INTO pedido
        (id,                                     numero_pedido, situacao,    cliente,    valor_total, percentual_desconto, valor_desconto)
 VALUES ('48337951-18f1-4cc3-9178-3c3bcd522e6b', 3,             'FECHADO',   'Edu',      0.00,        0.00,                0.00),
-       ('446961a6-8980-41df-88e1-2c4d13f28293', 2,             'PENDENTE',  'João',     0.0,         0.00,                0.00),
+       ('446961a6-8980-41df-88e1-2c4d13f28293', 2,             'PENDENTE',  'Joao',     0.0,         0.00,                0.00),
        ('8c5390a2-315e-44be-80d8-d31aa2cc8f77', 1,             'CANCELADO', 'Joana',    0.0,         0.00,                0.00);
 
 INSERT INTO item_pedido

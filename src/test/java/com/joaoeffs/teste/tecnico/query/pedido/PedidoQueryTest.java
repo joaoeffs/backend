@@ -39,7 +39,7 @@ class PedidoQueryTest {
             .andExpect(jsonPath("$.items[0].valorDesconto", is(0.0)))
 
             .andExpect(jsonPath("$.items[1].id", is("446961a6-8980-41df-88e1-2c4d13f28293")))
-            .andExpect(jsonPath("$.items[1].cliente", is("João")))
+            .andExpect(jsonPath("$.items[1].cliente", is("Joao")))
             .andExpect(jsonPath("$.items[1].numeroPedido", is(2)))
             .andExpect(jsonPath("$.items[1].situacao", is("PENDENTE")))
             .andExpect(jsonPath("$.items[1].valorTotal", is(0.0)))
@@ -71,13 +71,13 @@ class PedidoQueryTest {
     @Test
     void filtroCliente() throws Exception {
         mockMvc.perform(get("/api/pedido")
-                .param("cliente", "João"))
+                .param("cliente", "Joao"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.hasNext", is(false)))
             .andExpect(jsonPath("$.items", hasSize(1)))
 
             .andExpect(jsonPath("$.items[0].id", is("446961a6-8980-41df-88e1-2c4d13f28293")))
-            .andExpect(jsonPath("$.items[0].cliente", is("João")))
+            .andExpect(jsonPath("$.items[0].cliente", is("Joao")))
             .andExpect(jsonPath("$.items[0].numeroPedido", is(2)))
             .andExpect(jsonPath("$.items[0].situacao", is("PENDENTE")))
             .andExpect(jsonPath("$.items[0].valorTotal", is(0.0)))
@@ -94,7 +94,7 @@ class PedidoQueryTest {
             .andExpect(jsonPath("$.items", hasSize(1)))
 
             .andExpect(jsonPath("$.items[0].id", is("446961a6-8980-41df-88e1-2c4d13f28293")))
-            .andExpect(jsonPath("$.items[0].cliente", is("João")))
+            .andExpect(jsonPath("$.items[0].cliente", is("Joao")))
             .andExpect(jsonPath("$.items[0].numeroPedido", is(2)))
             .andExpect(jsonPath("$.items[0].situacao", is("PENDENTE")))
             .andExpect(jsonPath("$.items[0].valorTotal", is(0.0)))
