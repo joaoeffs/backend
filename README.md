@@ -1,7 +1,10 @@
 # Teste Técnico - Backend
 
-Este projeto é uma API RESTful desenvolvida com Spring Boot, que permite o gerenciamento de produtos, serviços e pedidos com regras de negócio específicas.
+Este projeto é uma API RESTful desenvolvida com Spring Boot, e Java 17 que permite o gerenciamento de produtos, serviços e pedidos com regras de negócio específicas.
 
+**Observações:** No arquivo do application.yml eu configurei um banco de dados H2 (em memória) pra facilitar a subir 
+a aplicação e a realizar os testes. Porém no mesmo arquivo eu tenho uma configuração para o PostreSQL 
+como foi pedido, caso deseje utilizar o PostreSQL, só ajustar a configuração e subir o projeto.
 ---
 
 ## Como Executar o Projeto
@@ -12,7 +15,7 @@ Este projeto é uma API RESTful desenvolvida com Spring Boot, que permite o gere
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   cd teste-tecnico
+   cd backend
    ```
 3. Instale as dependências
    ```bash
@@ -28,14 +31,14 @@ Este projeto é uma API RESTful desenvolvida com Spring Boot, que permite o gere
 ## Como utilizar a Aplicação
 
 1. Acesse o Swagger UI:
-   - URL: `http://localhost:8080/swagger-ui/index.html`
+   - URL: http://localhost:8080/swagger-ui/index.html
 2. Os endpoints estão organizado em dois grupos:
    - Core: operações de escrita no banco de dados (POST, PUT, DELETE).
    - Query: operações de leitura no banco de dados, com filtros (GET).
 3. Banco de dados:
    - Utilizei H2 em memória para facilitar o desenvolvimento e testes.
    - Para visualizar os dados, acesse o console do H2:
-     - URL: `http://localhost:8080/h2-console`
+     - URL: http://localhost:8080/h2-console
      - username: `sa` | password: `123`
    - Os dados são persistidos em memória e serão perdidos ao reiniciar a aplicação.
 4. Para testar:
