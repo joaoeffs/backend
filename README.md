@@ -2,9 +2,13 @@
 
 Este projeto é uma API RESTful desenvolvida com Spring Boot, e Java 17 que permite o gerenciamento de produtos, serviços e pedidos com regras de negócio específicas.
 
-**Observações:** No arquivo do application.yml eu configurei um banco de dados H2 (em memória) pra facilitar a subir 
-a aplicação e a realizar os testes. Porém no mesmo arquivo eu tenho uma configuração para o PostreSQL 
-como foi pedido, caso deseje utilizar o PostreSQL, só ajustar a configuração e subir o projeto.
+### Observação
+
+O projeto está configurado para utilizar o banco de dados **H2 em memória** por padrão, o que facilita a execução local e a realização de testes rápidos.
+
+Caso prefira utilizar **PostgreSQL**, a configuração já está disponível no arquivo `application.yml`.  
+Basta ajustar os parâmetros de conexão e iniciar a aplicação normalmente.
+
 ---
 
 ## Como Executar o Projeto
