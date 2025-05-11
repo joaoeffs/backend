@@ -8,11 +8,11 @@ Este projeto é uma API RESTful desenvolvida com Spring Boot, que permite o gere
 
 1. Clone o repositório:
    ```bash
-   git clone <url-do-repositorio>
+   git clone https://github.com/joaoeffs/backend
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   cd <nome-da-pasta>
+   cd teste-tecnico
    ```
 3. Instale as dependências
    ```bash
