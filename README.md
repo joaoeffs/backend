@@ -43,6 +43,7 @@ Basta ajustar os parâmetros de conexão e iniciar a aplicação normalmente.
    - Utilizei H2 em memória para facilitar o desenvolvimento e testes.
    - Para visualizar os dados, acesse o console do H2:
      - URL: http://localhost:8080/h2-console
+     - JDBC URL: jdbc:h2:mem:testdb
      - username: `sa` | password: `123`
    - Os dados são persistidos em memória e serão perdidos ao reiniciar a aplicação.
 4. Para testar:
